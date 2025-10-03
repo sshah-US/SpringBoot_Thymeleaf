@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Success</title>
+    <style>
+        body {
+            background-color: #FFEBCD;
+            font-family: Arial, sans-serif;
+        }
+        .section-title {
+            color: blue;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .field-label {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div th:if="${message}">
+        <h2 style="color:Green; font-size: 18px; font-weight: bold;" th:text="${message}"></h2>
+    </div>
+
+    <h2 class="section-title">================ You entered the following values ==================</h2>
+    <br>
+
+    <div th:object="${savedInfo}">
+        <span class="field-label">First Name:</span> <span th:text="*{fname}"></span><br>
+        <span class="field-label">Middle Name:</span> <span th:text="*{mname}"></span><br>
+        <span class="field-label">Last Name:</span> <span th:text="*{lname}"></span><br>
+        <span class="field-label">Gender:</span> <span th:text="*{gender}"></span><br>
+        <span class="field-label">Address:</span> <span th:text="*{address}"></span><br>
+        <span class="field-label">City:</span> <span th:text="*{city}"></span><br>
+        <span class="field-label">State:</span> <span th:text="*{state}"></span><br>
+        <span class="field-label">Country:</span> <span th:text="*{country}"></span><br>
+        <span class="field-label">Phone No.:</span> <span th:text="*{phno}"></span><br>
+        <span class="field-label">Bank Name:</span> <span th:text="*{bname}"></span><br>
+        <span class="field-label">Account No.:</span> <span th:text="*{acnum}"></span><br>
+        <span class="field-label">SSN:</span> <span th:text="*{ssn}"></span><br>
+    </div>
+
+    <h2 class="section-title">================ End of the display =============================</h2>
+</body>
+</html>
